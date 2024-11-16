@@ -1,8 +1,11 @@
 {
   "name": "3c-board",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.ts",
   "license": "MIT",
+"scripts": {
+"start": "ts-node src/index.ts"
+}
   "dependencies": {
     "@slack/bolt": "^4.1.0",
     "dotenv": "^16.4.5",

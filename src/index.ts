@@ -12,6 +12,9 @@ const db = new JSONdb("./db.json");
 app.db = db;
 
 loadEvents(app);
+setInterval(() => {
+fetch(process.env.SLACKUS_URL)
+}, 2.5 * 1000)
 
 app.start(process.env.PORT || process.env.SERVER_PORT || 3000);
 console.log(`Started on port ${process.env.PORT || process.env.SERVER_PORT || 3000}`);  

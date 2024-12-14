@@ -1,14 +1,14 @@
 import { ModifiedApp } from "../util";
 
 export default function (app: ModifiedApp) {
-    app.event("channel_created", async ({ event, client }) => {
-        try {
-          await client.conversations.join({ channel: event.channel.id });
-          await new Promise((r) => setTimeout(r, 400));
-          await app.client.chat.postEphemeral({
-            channel: event.channel.id,
-            user: event.channel.creator,
-            text: "If u can see the blocks then whoops",
+  app.event("channel_created", async ({ event, client }) => {
+    try {
+      await client.conversations.join({ channel: event.channel.id });
+      await new Promise((r) => setTimeout(r, 400));
+      await app.client.chat.postEphemeral({
+        channel: event.channel.id,
+        user: event.channel.creator,
+        text: "If u can see the blocks then whoops",
         blocks: [
           {
             type: "section",
@@ -27,14 +27,14 @@ export default function (app: ModifiedApp) {
                   text: "Leave",
                 },
                 value: "leave",
-                	"action_id": "handle_btn"
+                action_id: "handle_btn",
               },
             ],
-          }
+          },
         ],
-          })
-        } catch (e) {
-          console.error(e);
-        }
       });
+    } catch (e) {
+      console.error(e);
+    }
+  });
 }

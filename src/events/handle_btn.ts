@@ -7,8 +7,8 @@ export default function (app: ModifiedApp) {
     console.log(`#button`);
     await ack();
     // if (state.values.action === "leave") {
-      //@ts-ignore
-      await client.conversations.leave({ channel: par.body.channel?.id! });
+    //@ts-ignore
+    await client.conversations.leave({ channel: par.body.channel?.id! });
     // }
   });
 }

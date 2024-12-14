@@ -27,6 +27,7 @@ export default function (app: ModifiedApp) {
                   text: "Leave",
                 },
                 value: "leave",
+                	"action_id": "handle_btn"
               },
             ],
           }

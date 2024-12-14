@@ -1,13 +1,14 @@
+//@ts-nocheck
 import { ModifiedApp } from "../util";
 
 export default function (app: ModifiedApp) {
-  app.action("*", async (par) => {
+  app.action("handle_btn", async (par) => {
     const { ack, body, client } = par;
     console.log(`#button`);
-    //@ts-ignore
-    // if (state.values.action === "leave") {
-    await client.conversations.leave({ channel: par.body.channel?.id! });
     await ack();
+    // if (state.values.action === "leave") {
+      //@ts-ignore
+      await client.conversations.leave({ channel: par.body.channel?.id! });
     // }
   });
 }
